@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+    # A Multiviews search, where the server does an implicit filename pattern match,
+    # and choose from amongst the results.
+    # e.g: files.php over files/
+    Options -Multiviews
+
+    RewriteEngine On
+    RewriteBase /cube2-mvc/public
+
+    # Route everything through index.php and pass a url parameter
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+</IfModule>
