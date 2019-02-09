@@ -5,6 +5,7 @@
     Options -Multiviews
 
     RewriteEngine On
+    # RewriteBase /_YOUR_FOLDER_/public
     RewriteBase /cube2-mvc/public
 
     # Route everything through index.php and pass a url parameter
